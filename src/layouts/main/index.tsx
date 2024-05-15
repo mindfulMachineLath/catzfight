@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import ContentPanel from "./contentpanel";
 import Stack from "@mui/material/Stack";

@@ -10,6 +10,7 @@ import { Container } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import SocialLinks from './SocialLink'
 import CustomizedButton from '../../components/customButton';
+import Stack from '@mui/material/Stack';
 
 declare module '@mui/material/styles' {
     interface TypographyVariants {
@@ -34,7 +35,18 @@ declare module '@mui/material/Typography' {
     }
 }
 
+const theme = createTheme();
+
 const darkTheme = createTheme({
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 900,
+            lg: 1200,
+            xl: 1536,
+        },
+    },
     palette: {
         primary: {
             main: "rgb(0, 0, 0, 1)"
@@ -45,18 +57,31 @@ const darkTheme = createTheme({
             fontWeight: '400',
             display: "flex",
             alignItems: "center",
-            textDecoration: "none"
+            textDecoration: "none",
+
         },
         maintitle: {
             fontSize: "64px",
             color: "rgb(255, 201, 14)",
             fontFamily: 'Bree Serif',
+            [theme.breakpoints.down('lg')]: {
+                fontSize: "40px"
+            },
+            [theme.breakpoints.down('md')]: {
+                fontSize: "30px"
+            }
         },
         subtitle: {
             margin: "8px 0px 0px",
             color: "white",
             fontSize: "40px",
             fontFamily: 'Bree Serif',
+            [theme.breakpoints.down('lg')]: {
+                fontSize: "32px"
+            },
+            [theme.breakpoints.down('md')]: {
+                display : "none"
+            }
         }
     },
     components: {
@@ -73,14 +98,13 @@ const darkTheme = createTheme({
         MuiAppBar: {
             styleOverrides: {
                 root: {
-                    padding: "24px 24px",
+                    padding: "24px 0px",
                 },
             },
         },
         MuiContainer: {
             styleOverrides: {
                 root: {
-                    padding: "0px 24px",
                     margin: "auto",
                 },
             },
@@ -100,7 +124,7 @@ const MenuIconButton = styled(IconButton)(({ theme }) => ({
 
 const ButtonAppBar: React.FC = () => {
     return (
-        <Box>
+        <Stack>
             <ThemeProvider theme={darkTheme}>
                 <AppBar position="static" color='primary'>
                     <Container maxWidth="xl">
@@ -125,7 +149,7 @@ const ButtonAppBar: React.FC = () => {
                     </Container>
                 </AppBar>
             </ThemeProvider>
-        </Box>
+        </Stack>
     );
 }
 

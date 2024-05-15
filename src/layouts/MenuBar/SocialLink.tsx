@@ -1,4 +1,3 @@
-import * as React from 'react';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import SendIcon from '@mui/icons-material/Send';
@@ -17,6 +16,7 @@ const icons = [
     }
 ];
 
+
 const CustomIconButton = styled(IconButton)(({ theme }) => ({
     '&:hover': {
         backgroundColor: "rgba(38, 40, 42, 0.95)",
@@ -25,6 +25,9 @@ const CustomIconButton = styled(IconButton)(({ theme }) => ({
     weight : "36px",
     borderRadius : "9px",
     margin : "2px",
+    [theme.breakpoints.down("sm")]: {
+        display : "none"
+    },
 })) as typeof IconButton;
 
 export default function SocialLinks() {

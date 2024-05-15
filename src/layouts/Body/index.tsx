@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import styled from 'styled-components';
 import { Button, Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Main from '../main';
 
-// Adding responsive styling to the ImageBox
+import { styled } from '@mui/material/styles';
+
 const ImageBox = styled(Box)(({ theme }) => ({
     textAlign: "center",
     backgroundColor: "rgb(38 41 43)",
@@ -30,8 +30,6 @@ const HoneyTextBox = styled(Box)(({ theme }) => ({
 })) as typeof Box;
 
 const TextTypography = styled(Typography)(({ theme }) => ({
-    fontSize: "48px !important",
-    minWidth: "900px",
     fontFamily: "Audiowide !important",
     color: "rgb(255, 201, 14)",
     fontWeight: "700",
@@ -39,6 +37,15 @@ const TextTypography = styled(Typography)(({ theme }) => ({
     paddingBottom: "8px",
     backgroundColor: "rgb(38 41 43)",
     textAlign: "center",
+    [theme.breakpoints.up('sm')]: {
+        fontSize: "20px"
+    },
+    [theme.breakpoints.up('md')]: {
+        fontSize: "30px"
+    },
+    [theme.breakpoints.up('lg')]: {
+        fontSize: "48px "
+    }
 })) as typeof Typography;
 
 const ButtonBox = styled(Box)(({ theme }) => ({
@@ -73,13 +80,21 @@ const NFTTypography = styled(Typography)(({ theme }) => ({
 
 const HnyTypography = styled(Typography)(({ theme }) => ({
     padding: "8px 0 8px 0",
-    width: "1000px",
     color: "white",
-    fontSize: "36px !important",
     fontWeight: "400",
     textAlign: "center",
     fontFamily: "Audiowide !important",
-    backgroundColor: "rgba(38, 40, 42, 0.64);"
+    backgroundColor: "rgba(38, 40, 42, 0.64);",
+    [theme.breakpoints.up('sm')]: {
+        fontSize: "20px"
+    },
+    [theme.breakpoints.up('md')]: {
+        fontSize: "30px"
+    },
+    [theme.breakpoints.up('lg')]: {
+        fontSize: "36px",
+        width: "1000px"
+    }
 })) as typeof Typography;
 
 
