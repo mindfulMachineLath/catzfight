@@ -104,12 +104,11 @@ const Body: React.FC = () => {
             <ImageBox>
                 <ImageContainer>
                     <img
-                        src="/static/1.png"
+                        src="/static/images/1.png"
                         style={{
                             width: '70%',
                             height: 'auto',
                         }}
-                        alt="Banner Image"
                     ></img>
                 </ImageContainer>
             </ImageBox>
@@ -120,7 +119,7 @@ const Body: React.FC = () => {
                 <ButtonBox>
                     <Box className = "withdraw">
                         <NFTButton variant="contained">
-                            WITHDRAW NFTSS
+                            WITHDRAW NFTS
                         </NFTButton>
                         <NFTTypography component="p">
                             Available NFTs: 0 NFTs
